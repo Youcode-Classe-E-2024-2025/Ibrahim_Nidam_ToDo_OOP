@@ -1,13 +1,14 @@
 <?php
-require 'controller/taskController.php';
+require 'controller/TaskController.class.php';
 
 $action = $_GET["action"] ?? "list";
-$TaskController = new TaskController();
-switch ($action) {
-    case "list":  $TaskController->DisplayTask();
-    break;
-    // case "add": Addcontacts();
-    // break;
 
+$taskController = new TaskController();
+switch ($action) {
+
+    case "list":  $taskController->index();;
+    break;
+    // case "create": $taskController->create(); 
+    // break;
 }
 ?>

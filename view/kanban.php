@@ -29,7 +29,7 @@
     </div>
     
     <article id="todo-card-article" class="flex flex-col gap-3 flex-1 w-full">
-    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'To Do'){ $doingtasks[] = $task;}} ?>
+    <?php $doingtasks = array(); foreach ($tasks as $task){ if($task["status"] == 'To Do'){ $doingtasks[] = $task;}} ?>
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
@@ -97,7 +97,7 @@
     </div>
     
     <article id="doing-card-article" class="flex flex-col gap-3 flex-1 w-full">
-    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'Doing'){ $doingtasks[] = $task;}} ?>
+    <?php $doingtasks = array(); foreach ($tasks as $task){ if($task["status"] == 'Doing'){ $doingtasks[] = $task;}} ?>
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
@@ -165,7 +165,7 @@
     </div>
     
     <article id="review-card-article" class="flex flex-col gap-3 flex-1 w-full">
-    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'Review'){ $doingtasks[] = $task;}} ?>
+    <?php $doingtasks = array(); foreach ($tasks as $task){ if($task["status"] == 'Review'){ $doingtasks[] = $task;}} ?>
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
@@ -233,7 +233,7 @@
     </div>
     
     <article id="done-card-article" class="flex flex-col gap-3 flex-1 w-full">
-    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'Done'){ $doingtasks[] = $task;}} ?>
+    <?php $doingtasks = array(); foreach ($tasks as $task){ if($task["status"] == 'Done'){ $doingtasks[] = $task;}} ?>
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
