@@ -38,8 +38,8 @@
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
             </div>
-            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
-            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+            <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
         
         <div class="flex justify-between items-center pt-2">
           <div class="flex items-center">
@@ -106,8 +106,8 @@
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
             </div>
-            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
-            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+            <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
         
         <div class="flex justify-between items-center pt-2">
           <div class="flex items-center">
@@ -171,8 +171,8 @@
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
             </div>
-            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
-            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+            <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
         
         <div class="flex justify-between items-center pt-2">
           <div class="flex items-center">
@@ -236,8 +236,8 @@
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
             </div>
-            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
-            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+            <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
         
         <div class="flex justify-between items-center pt-2">
           <div class="flex items-center">
