@@ -37,3 +37,25 @@ INSERT INTO users (name, email, password) VALUES
 ('Charlie Brown', 'charlie.brown@example.com', 'charlie2024'),
 ('Diana Prince', 'diana.prince@example.com', 'wonderwoman1'),
 ('Ethan Hunt', 'ethan.hunt@example.com', 'missionImpossible');
+
+
+INSERT INTO tasks (title, description, due_datetime, priority, status, user_id)
+VALUES 
+('Task 1', 'Complete project documentation', '2024-12-30 12:00:00', 'High', 'To Do', 1),
+('Task 2', 'Fix login bug', '2024-12-28 15:00:00', 'Medium', 'Doing', 2),
+('Task 3', 'Develop new feature for dashboard', '2025-01-05 09:00:00', 'High', 'To Do', 3),
+('Task 4', 'Update server configuration', '2024-12-26 18:00:00', 'Low', 'Review', 4),
+('Task 5', 'Test e-commerce payment system', '2024-12-31 23:59:00', 'Medium', 'Done', 5);
+
+
+INSERT INTO task_users (task_id, user_id)
+VALUES
+(1, 1), -- Task 1 assigned to User 1
+(2, 2), -- Task 2 assigned to User 2
+(3, 3), -- Task 3 assigned to User 3
+(4, 4), -- Task 4 assigned to User 4
+(5, 5), -- Task 5 assigned to User 5
+(1, 2), -- Task 1 also assigned to User 2
+(2, 3), -- Task 2 also assigned to User 3
+(3, 4); -- Task 3 also assigned to User 4
+

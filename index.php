@@ -2,12 +2,12 @@
 require 'controller/taskController.php';
 
 $action = $_GET["action"] ?? "list";
+$TaskController = new TaskController();
 switch ($action) {
-    case "list": Getcontacts();
+    case "list":  $TaskController->DisplayTask();
     break;
-
-    case "add": Addcontacts();
-    break;
+    // case "add": Addcontacts();
+    // break;
 
 }
 ?>

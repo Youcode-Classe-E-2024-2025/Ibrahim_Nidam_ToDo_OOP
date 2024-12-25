@@ -1,12 +1,12 @@
 <?php
 
-require "modal/taskmodal.php";
+require "model/taskmodal.php";
 class TaskController{
 
-   public function DsiplayTask(){
+   public function DisplayTask(){
     $task = new Task();
     $tasksarray = $task->getAllTasks();
-    include "view/dispalyTasks.php";
+    include "view/kanban.php";
    }
    
 

@@ -1,3 +1,6 @@
+<?php include("sections/header.php") ?>
+<?php include("sections/profile.php") ?>
+<?php include("sections/stats.php") ?>
 
 <section id="kanban" class="min-h-screen p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center sm:justify-items-stretch">
   <!-- To Do Column -->
@@ -26,9 +29,46 @@
     </div>
     
     <article id="todo-card-article" class="flex flex-col gap-3 flex-1 w-full">
-      <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
-        No Task Yet
-      </div>
+    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'To Do'){ $doingtasks[] = $task;}} ?>
+    <?php if (!empty($doingtasks)): ?>
+      <?php foreach ($doingtasks as $doing): ?>
+        <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
+
+            <div class="flex justify-between items-start mb-2">
+              <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+            </div>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
+            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+        
+        <div class="flex justify-between items-center pt-2">
+          <div class="flex items-center">
+            <div class="flex -space-x-2">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <div class="cursor-pointer rounded-full border border-black w-6 h-6 bg-lightModeMain text-white flex items-center justify-center text-xs">+3</div>
+            </div>
+          </div>
+          
+            <div class="flex items-center gap-4 text-gray-300 text-xs">
+                <div class="flex items-center">
+                    <img src="assets/src/images/icons/eye visibility.svg" alt="eye icon" class="w-4 h-4 mr-1" />
+                    <span>2</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="assets/src/images/icons/comment.svg" alt="comment icon" class="w-4 h-4 mr-1" />
+                    <span>0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php endforeach; ?>
+            <?php else: ?>
+              <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
+               No Task Yet
+              </div>
+            <?php endif; ?>
     </article>
   </div>
 
@@ -57,9 +97,46 @@
     </div>
     
     <article id="doing-card-article" class="flex flex-col gap-3 flex-1 w-full">
-      <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
-        No Task Yet
-      </div>
+    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'Doing'){ $doingtasks[] = $task;}} ?>
+    <?php if (!empty($doingtasks)): ?>
+      <?php foreach ($doingtasks as $doing): ?>
+        <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
+
+            <div class="flex justify-between items-start mb-2">
+              <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+            </div>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
+            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+        
+        <div class="flex justify-between items-center pt-2">
+          <div class="flex items-center">
+            <div class="flex -space-x-2">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <div class="cursor-pointer rounded-full border border-black w-6 h-6 bg-lightModeMain text-white flex items-center justify-center text-xs">+3</div>
+            </div>
+          </div>
+          
+            <div class="flex items-center gap-4 text-gray-300 text-xs">
+                <div class="flex items-center">
+                    <img src="assets/src/images/icons/eye visibility.svg" alt="eye icon" class="w-4 h-4 mr-1" />
+                    <span>2</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="assets/src/images/icons/comment.svg" alt="comment icon" class="w-4 h-4 mr-1" />
+                    <span>0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php endforeach; ?>
+            <?php else: ?>
+              <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
+               No Task Yet
+              </div>
+            <?php endif; ?>
     </article>
   </div>
 
@@ -88,9 +165,46 @@
     </div>
     
     <article id="review-card-article" class="flex flex-col gap-3 flex-1 w-full">
-      <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
-        No Task Yet
-      </div>
+    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'Review'){ $doingtasks[] = $task;}} ?>
+    <?php if (!empty($doingtasks)): ?>
+      <?php foreach ($doingtasks as $doing): ?>
+        <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
+
+            <div class="flex justify-between items-start mb-2">
+              <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+            </div>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
+            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+        
+        <div class="flex justify-between items-center pt-2">
+          <div class="flex items-center">
+            <div class="flex -space-x-2">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <div class="cursor-pointer rounded-full border border-black w-6 h-6 bg-lightModeMain text-white flex items-center justify-center text-xs">+3</div>
+            </div>
+          </div>
+          
+            <div class="flex items-center gap-4 text-gray-300 text-xs">
+                <div class="flex items-center">
+                    <img src="assets/src/images/icons/eye visibility.svg" alt="eye icon" class="w-4 h-4 mr-1" />
+                    <span>2</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="assets/src/images/icons/comment.svg" alt="comment icon" class="w-4 h-4 mr-1" />
+                    <span>0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php endforeach; ?>
+            <?php else: ?>
+              <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
+               No Task Yet
+              </div>
+            <?php endif; ?>
     </article>
   </div>
 
@@ -119,9 +233,47 @@
     </div>
     
     <article id="done-card-article" class="flex flex-col gap-3 flex-1 w-full">
-      <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
-        No Task Yet
-      </div>
+    <?php $doingtasks = array(); foreach ($tasksarray as $task){ if($task["status"] == 'Done'){ $doingtasks[] = $task;}} ?>
+    <?php if (!empty($doingtasks)): ?>
+      <?php foreach ($doingtasks as $doing): ?>
+        <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
+
+            <div class="flex justify-between items-start mb-2">
+              <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+            </div>
+            <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['created_at'].">".$doing['due_datetime']?></p>
+            <p class="text-greyText text-xs mb-2"><?= $doing['description']?></p>
+        
+        <div class="flex justify-between items-center pt-2">
+          <div class="flex items-center">
+            <div class="flex -space-x-2">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <img src="https://picsum.photos/100" alt="" class="w-6 h-6 rounded-full border border-black">
+              <div class="cursor-pointer rounded-full border border-black w-6 h-6 bg-lightModeMain text-white flex items-center justify-center text-xs">+3</div>
+            </div>
+          </div>
+          
+            <div class="flex items-center gap-4 text-gray-300 text-xs">
+                <div class="flex items-center">
+                    <img src="assets/src/images/icons/eye visibility.svg" alt="eye icon" class="w-4 h-4 mr-1" />
+                    <span>2</span>
+                  </div>
+                  <div class="flex items-center">
+                    <img src="assets/src/images/icons/comment.svg" alt="comment icon" class="w-4 h-4 mr-1" />
+                    <span>0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php endforeach; ?>
+            <?php else: ?>
+              <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
+               No Task Yet
+              </div>
+            <?php endif; ?>
     </article>
   </div>
 </section>
+<?php include("sections/footer.php") ?>
