@@ -1,5 +1,5 @@
 <section class="py-5 px-10 border border-b-greyHighLights">
-        <div class="flex flex-col bt-sm:flex-row justify-between bt-sm:gap-14 items-center mb-6">
+        <div class="flex bt-sm:flex-row justify-between bt-sm:gap-14 items-center mb-6">
           <div class="flex gap-4 items-center">
             <img
               src="https://picsum.photos/100"

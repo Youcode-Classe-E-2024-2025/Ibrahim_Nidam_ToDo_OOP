@@ -8,7 +8,7 @@
         <meta name="author" content="Ibrahim Nidam" />
         <title>Task Flow || Kanban</title>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="icon" href="assets/src/images/favicon/favicon-32x32.png" type="image/x-icon" />
         <link
             rel="stylesheet"
