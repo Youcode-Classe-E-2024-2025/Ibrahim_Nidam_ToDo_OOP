@@ -1,9 +1,3 @@
-<?php
-$totalTasks = count($tasks);
-$completedTasks = count(array_filter($tasks, fn($task) => $task['status'] === 'Done'));
-$completionPercentage = $totalTasks > 0 ? round(($completedTasks / $totalTasks) * 100) : 0;
-?>
-
 <section class="py-5 px-10 border border-b-greyHighLights">
         <div class="flex flex-col bt-sm:flex-row justify-between bt-sm:gap-14 items-center mb-6">
           <div class="flex gap-4 items-center">

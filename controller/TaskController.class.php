@@ -7,6 +7,7 @@ class TaskController extends MainController
     public function index()
     {
         $tasks = $this->displayTasks();
+        $completionPercentage = $this->taskModel->getCompletionPercentage();
         require_once 'view/kanban.php';
     }
     public function showCreateForm() {
