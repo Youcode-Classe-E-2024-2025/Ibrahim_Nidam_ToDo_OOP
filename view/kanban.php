@@ -10,7 +10,7 @@
         <div class="flex items-center gap-2">
           <p id="todo-para" class="text-xl font-medium">To Do</p>
           <div id="todo-stats" class="rounded-full border border-black w-8 h-8 text-lightModeMain flex items-center justify-center text-xs">
-            0
+          <?php echo count(array_filter($tasks, fn($task) => $task['status'] === 'To Do')); ?>
           </div>
         </div>
         <img
@@ -79,7 +79,7 @@
         <div class="flex items-center gap-2">
           <p id="doing-para" class="text-xl font-medium">Doing</p>
           <div id="doing-stats" class="rounded-full border border-black w-8 h-8 text-lightModeMain flex items-center justify-center text-xs">
-            0
+          <?php echo count(array_filter($tasks, fn($task) => $task['status'] === 'Doing')); ?>
           </div>
         </div>
         <img
@@ -147,7 +147,7 @@
         <div class="flex items-center gap-2">
           <p id="review-para" class="text-xl font-medium">Review</p>
           <div id="review-stats" class="rounded-full border border-black w-8 h-8 text-lightModeMain flex items-center justify-center text-xs">
-            0
+          <?php echo count(array_filter($tasks, fn($task) => $task['status'] === 'Review')); ?>
           </div>
         </div>
         <img
@@ -215,7 +215,7 @@
         <div class="flex items-center gap-2">
           <p id="done-para" class="text-xl font-medium">Done</p>
           <div id="done-stats" class="rounded-full border border-black w-8 h-8 text-lightModeMain flex items-center justify-center text-xs">
-            0
+          <?php echo count(array_filter($tasks, fn($task) => $task['status'] === 'Done')); ?>
           </div>
         </div>
         <img
