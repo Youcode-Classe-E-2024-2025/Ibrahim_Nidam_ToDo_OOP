@@ -34,7 +34,7 @@ class Database {
     
                 $this->db->exec($sqlScript);
             }
-    
+        return $this->db;
         } catch (PDOException $e) {
             error_log("Database Setup Error: " . $e->getMessage());
             die("Database error: " . $e->getMessage());
@@ -42,7 +42,6 @@ class Database {
             error_log("Setup Error: " . $e->getMessage());
             die("Setup error: " . $e->getMessage());
         }
-        return $this->db;
     }
 }
 
