@@ -1,3 +1,9 @@
+<?php
+$totalTasks = count($tasks);
+$completedTasks = count(array_filter($tasks, fn($task) => $task['status'] === 'Done'));
+$completionPercentage = $totalTasks > 0 ? round(($completedTasks / $totalTasks) * 100) : 0;
+?>
+
 <section class="py-5 px-10 border border-b-greyHighLights">
         <div class="flex flex-col bt-sm:flex-row justify-between bt-sm:gap-14 items-center mb-6">
           <div class="flex gap-4 items-center">
@@ -9,11 +15,12 @@
             <div>
               <p class="text-xl mb-2">Piper Enterprise</p>
               <div class="flex gap-4 items-center">
-                <div
+              <div
                   id="statisques-bar"
                   class="w-60 h-2 rounded-sm completetion-bar border-black border"
-                ></div>
-                <p id="statisques" class="text-xs text-greyText">37% Complete</p>
+                  style="--completion-bar: linear-gradient(to right, #6096BA <?php echo $completionPercentage; ?>%, rgba(128, 128, 128, 0.29) <?php echo $completionPercentage; ?>%);"
+              ></div>
+              <p id="statisques" class="text-xs text-greyText"><?php echo $completionPercentage; ?>% Complete</p>
                 </div>
             </div>
             </div>
@@ -50,7 +57,7 @@
         <div class="flex gap-3 items-center relative justify-center">
             <img src="assets/src/images/icons/calendar.svg" alt="" class="text-black" />
             <p>Deadline</p>
-            <p class="text-greyText text-xs">29 Jun 2025</p>
+            <p class="text-greyText text-xs">29 Dec 2024</p>
             <div class="h-7 w-px bg-gray-500"></div>
             <img src="assets/src/images/icons/eye visibility.svg" alt="" class="text-black" />
             <p>Visibility</p>
