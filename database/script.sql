@@ -1,36 +1,33 @@
-
 CREATE DATABASE IF NOT EXISTS taskflow_db;
-
 
 USE taskflow_db;
 
-
 CREATE TABLE IF NOT EXISTS users (
-  id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  name TEXT NOT NULL,
-  email TEXT UNIQUE NOT NULL,
-  password TEXT NOT NULL
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL
 );
-
 
 CREATE TABLE IF NOT EXISTS tasks (
-  id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  title TEXT NOT NULL,
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
   description TEXT,
-  type TEXT NOT NULL,
+  type VARCHAR(255) NOT NULL,
   status ENUM('To Do', 'Doing', 'Review', 'Done') NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  user_id BIGINT REFERENCES users (id) ON DELETE CASCADE
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
-
 
 CREATE TABLE IF NOT EXISTS task_users (
-  task_id BIGINT REFERENCES tasks (id) ON DELETE CASCADE,
-  user_id BIGINT REFERENCES users (id) ON DELETE CASCADE,
-  PRIMARY KEY (task_id, user_id)
+  task_id INT,
+  user_id INT,
+  PRIMARY KEY (task_id, user_id),
+  FOREIGN KEY (task_id) REFERENCES tasks (id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
-
 
 INSERT INTO users (name, email, password) VALUES
 ('Alice Johnson', 'alice.johnson@example.com', 'password123'),
@@ -38,4 +35,3 @@ INSERT INTO users (name, email, password) VALUES
 ('Charlie Brown', 'charlie.brown@example.com', 'charlie2024'),
 ('Diana Prince', 'diana.prince@example.com', 'wonderwoman1'),
 ('Ethan Hunt', 'ethan.hunt@example.com', 'missionImpossible');
-
