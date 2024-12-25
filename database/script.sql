@@ -10,16 +10,18 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS tasks (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  description TEXT,
-  type VARCHAR(255) NOT NULL,
-  status ENUM('To Do', 'Doing', 'Review', 'Done') NOT NULL,
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(16) NOT NULL,
+  description VARCHAR(100),
+  due_datetime DATETIME, 
+  priority ENUM('High', 'Medium', 'Low') NOT NULL,
+  status ENUM('To Do', 'Doing', 'Review', 'Done') NOT NULL DEFAULT 'To Do',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   user_id INT,
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
+
 
 CREATE TABLE IF NOT EXISTS task_users (
   task_id INT,
