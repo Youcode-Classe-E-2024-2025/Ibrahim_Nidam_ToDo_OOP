@@ -1,6 +1,9 @@
+<?php include("sections/header.php") ?>
+
+
 <section id="form"class="items-center justify-center bg-gray-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 
-<form method="POST" action="" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md md:max-w-lg space-y-6">
+<form method="POST" action="?action=create" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md md:max-w-lg space-y-6">
     <div class="flex items-center space-x-4">
         <label for="title" class="w-24 text-gray-700 font-semibold">Title:</label>
         <input
@@ -73,8 +76,23 @@
             <label for="priority-low" class="text-green-500">Low</label>
         </div>
     </div>
+            <div class="flex items-center space-x-4">
+            <label class="w-24 text-gray-700 font-semibold">Status:</label>
+            <select
+                name="status"
+                id="status"
+                required
+                class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                <option value="To Do">To Do</option>
+                <option value="Doing">Doing</option>
+                <option value="Review">Review</option>
+                <option value="Done">Done</option>
+            </select>
+        </div>
 
     <div class="flex justify-end mt-6">
+
         <button
             type="submit"
             class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -83,5 +101,5 @@
         </button>
     </div>
 </form>
-
-        </section>
+</section>
+<?php include("sections/footer.php") ?>

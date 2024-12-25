@@ -8,7 +8,12 @@ switch ($action) {
 
     case "list":  $taskController->index();;
     break;
-    // case "create": $taskController->create(); 
-    // break;
+    case "create_form":
+        $taskController->showCreateForm();
+        break;
+    case "create":
+        $taskController->processCreateTask();
+        break;
+    
 }
 ?>

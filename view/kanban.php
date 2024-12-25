@@ -225,11 +225,8 @@
           class="more-vert text-black cursor-pointer h-6 w-6"
         />
       </div>
-      <a
-        href="#"
-        data-status-id="done"
-        class="add-Task-btn text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"
-      >+ Add Task</a>
+      <a href="?action=create_form" data-status-id="done" class=" text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"> + Add Task</a>
+
     </div>
     
     <article id="done-card-article" class="flex flex-col gap-3 flex-1 w-full">

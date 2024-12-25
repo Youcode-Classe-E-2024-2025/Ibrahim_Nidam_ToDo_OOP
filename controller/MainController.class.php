@@ -15,5 +15,8 @@ class MainController
         $tasks = $this->taskModel->getAllTasks();
         return $tasks;
     }
+    public function CreateTask(){
+        $this->taskModel->CreateTask();
+    }
 
 }

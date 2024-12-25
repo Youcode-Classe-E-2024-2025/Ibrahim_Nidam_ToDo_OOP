@@ -9,6 +9,28 @@ class TaskController extends MainController
         $tasks = $this->displayTasks();
         require_once 'view/kanban.php';
     }
+    public function showCreateForm() {
+        include 'view/task_form.php';
+    }
+    
+    public function processCreateTask() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $title = $_POST["title"];
+            $description = $_POST["description"];
+            $due_date = $_POST["due_date"];
+            $status = $_POST["status"];
+            $data = [
+                'title' => $title,
+                'description' => $description,
+                'due_datetime' => $due_date,
+                'status' => $status
+            ];
+            $this->taskModel->CreateTask($data);
+            header('Location: index.php');
+            exit;
+        }
+    }
+    
 
 }
 

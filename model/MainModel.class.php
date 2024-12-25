@@ -24,4 +24,14 @@ class MainModel{
         $stmt->execute($conditions);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+    public function create($table, $data)
+    {
+        $columns = implode(',', array_keys($data));
+        $placeholders = ':' . implode(', :', array_keys($data));
+        $sql = "INSERT INTO {$table} ({$columns}) VALUES ({$placeholders})";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($data);
+    }
+
 }
