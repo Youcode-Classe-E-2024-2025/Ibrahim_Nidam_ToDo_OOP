@@ -6,8 +6,10 @@ CREATE TABLE IF NOT EXISTS users (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  role ENUM('user', 'admin') NOT NULL DEFAULT 'user'
 );
+
 
 CREATE TABLE IF NOT EXISTS tasks (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -28,6 +30,11 @@ CREATE TABLE IF NOT EXISTS task_users (
   FOREIGN KEY (task_id) REFERENCES tasks (id) ON DELETE CASCADE,
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
+
+INSERT INTO users (name, email, password, role) 
+VALUES ('John Doe', 'u@g.com', 'user', 'user'),
+      ('Admin Jane', 'a@g.com', 'admin', 'admin');
+
 
 INSERT INTO users (name, email, password) VALUES
 ('Alice Johnson', 'alice.johnson@example.com', 'password123'),
