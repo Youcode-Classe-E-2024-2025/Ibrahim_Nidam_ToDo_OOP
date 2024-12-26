@@ -26,7 +26,7 @@
     <div class="font-['Montserrat'] bg-[#f6f5f7] flex justify-center items-center min-h-screen -mt-5 mb-[50px]">
         <div class="container bg-white rounded-[10px] shadow-[0_14px_28px_rgba(0,0,0,0.25)] relative overflow-hidden w-[768px] max-w-full min-h-[480px]" id="container">
             <div class="form-container sign-up-container absolute top-0 h-full transition-all duration-1000 ease-in-out left-0 w-1/2 opacity-0 z-[1]">
-                <form class="bg-white flex items-center justify-center flex-col px-[50px] h-full text-center">
+                <form method="POST" action="index.php?action=signUp" class="bg-white flex items-center justify-center flex-col px-[50px] h-full text-center">
                     <h1 class="font-bold m-0">Create Account</h1>
                     <div class="social-container my-5 mx-0">
                         <a href="#" class="social border border-[#DDDDDD] rounded-full inline-flex justify-center items-center m-[0_5px] h-[40px] w-[40px] no-underline text-[#333]"><i class="fab fa-facebook-f"></i></a>
@@ -34,14 +34,14 @@
                         <a href="#" class="social border border-[#DDDDDD] rounded-full inline-flex justify-center items-center m-[0_5px] h-[40px] w-[40px] no-underline text-[#333]"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your email for registration</span>
-                    <input type="text" placeholder="Name" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
-                    <input type="email" placeholder="Email" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
-                    <input type="password" placeholder="Password" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
+                    <input type="text" name="name" placeholder="Name" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
+                    <input type="email" name="email" placeholder="Email" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
+                    <input type="password" name="password" placeholder="Password" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
                     <button class="rounded-[20px] border border-[rgb(96,150,186)] bg-[rgb(96,150,186)] text-white text-xs font-bold py-3 px-[45px] tracking-[1px] uppercase cursor-pointer">Sign Up</button>
                 </form>
             </div>
             <div class="form-container sign-in-container absolute top-0 h-full transition-all duration-1000 ease-in-out left-0 w-1/2 z-[2]">
-                <form class="bg-white flex items-center justify-center flex-col px-[50px] h-full text-center">
+                <form method="POST" action="index.php?action=login" class="bg-white flex items-center justify-center flex-col px-[50px] h-full text-center">
                     <h1 class="font-bold m-0">Sign in</h1>
                     <div class="social-container my-5 mx-0">
                         <a href="#" class="social border border-[#DDDDDD] rounded-full inline-flex justify-center items-center m-[0_5px] h-[40px] w-[40px] no-underline text-[#333]"><i class="fab fa-facebook-f"></i></a>
@@ -49,8 +49,8 @@
                         <a href="#" class="social border border-[#DDDDDD] rounded-full inline-flex justify-center items-center m-[0_5px] h-[40px] w-[40px] no-underline text-[#333]"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your account</span>
-                    <input type="email" placeholder="Email" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
-                    <input type="password" placeholder="Password" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
+                    <input type="email" name="email" placeholder="Email" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
+                    <input type="password" name="password" placeholder="Password" class="bg-[#eee] border-none py-3 px-[15px] my-2 mx-0 w-full" />
                     <a href="#" class="text-[#333] no-underline">Forgot your password?</a>
                     <button class="rounded-[20px] border border-[rgb(96,150,186)] bg-[rgb(96,150,186)] text-white text-xs font-bold py-3 px-[45px] tracking-[1px] uppercase cursor-pointer">Sign In</button>
                 </form>
@@ -84,5 +84,7 @@
             container.classList.remove('active');
         });
     </script>
+
+    
 
 <?php require_once 'footer.php'; ?>

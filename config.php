@@ -6,6 +6,16 @@ class Database {
     private $pass = "";
     public $db;
 
+    public function __construct() {
+        $this->startSession();
+    }
+
+    private function startSession() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
     public function getConnection() {
         try {
             $dsn = "mysql:host=$this->host;charset=utf8mb4";

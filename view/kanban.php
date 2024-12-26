@@ -1,6 +1,13 @@
+<?php 
+if (!isset($_SESSION['user'])) {
+  header("Location: ?action=login");
+  exit;
+}
+?>
 <?php include("sections/header.php") ?>
 <?php include("sections/profile.php") ?>
 <?php include("sections/stats.php") ?>
+
 
 <section id="kanban" class="min-h-screen p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center sm:justify-items-stretch">
   <!-- To Do Column -->

@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS task_users (
 );
 
 INSERT INTO users (name, email, password, role) 
-VALUES ('John Doe', 'u@g.com', 'user', 'user'),
-      ('Admin Jane', 'a@g.com', 'admin', 'admin');
+VALUES ('John Doe', 'u@g.com', ' $2a$12$6b3cRmfIq0/5TeffMU4Co.2mYBCqn7HKGq9XDYykqYMIEJBjuEmVO', 'user'),
+      ('Admin Jane', 'a@g.com', ' $2a$12$wTosY8YUm4.C4oXOU3EU.evWgjq3SOBVmtsrTULDG0iLrKAaRbYpi', 'admin');
 
 
 INSERT INTO users (name, email, password) VALUES
