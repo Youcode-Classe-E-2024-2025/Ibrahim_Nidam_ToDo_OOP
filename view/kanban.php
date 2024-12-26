@@ -33,7 +33,11 @@
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
-
+        <?php if(!empty($doing["tag"])): ?>
+            <div class="absolute top-2 right-16 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <p><?= $doing["tag"] ?></p>
+            </div>
+          <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
@@ -103,7 +107,11 @@
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
-
+        <?php if(!empty($doing["tag"])): ?>
+            <div class="absolute top-2 right-16 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <p><?= $doing["tag"] ?></p>
+            </div>
+          <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
@@ -170,7 +178,11 @@
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
-
+        <?php if(!empty($doing["tag"])): ?>
+            <div class="absolute top-2 right-16 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <p><?= $doing["tag"] ?></p>
+            </div>
+          <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
@@ -237,7 +249,11 @@
     <?php if (!empty($doingtasks)): ?>
       <?php foreach ($doingtasks as $doing): ?>
         <div class="dragNdrop cursor-pointer max-w-sm p-4 bg-white rounded-lg shadow-md border border-gray-200">
-
+          <?php if(!empty($doing["tag"])): ?>
+            <div class="absolute top-2 right-16 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              <p><?= $doing["tag"] ?></p>
+            </div>
+          <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
               <a href="?action=delete&id=<?= $doing['id'] ?>">

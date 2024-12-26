@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS tasks (
   due_datetime DATETIME, 
   priority ENUM('High', 'Medium', 'Low') NOT NULL,
   status ENUM('To Do', 'Doing', 'Review', 'Done') NOT NULL DEFAULT 'To Do',
+  tag VARCHAR(16) DEFAULT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -35,13 +36,15 @@ INSERT INTO users (name, email, password) VALUES
 ('Diana Prince', 'diana.prince@example.com', 'wonderwoman1'),
 ('Ethan Hunt', 'ethan.hunt@example.com', 'missionImpossible');
 
-INSERT INTO tasks (title, description, due_datetime, priority, status)
-VALUES 
-('Task 1', 'Complete project documentation', '2024-12-30 12:00:00', 'High', 'To Do'),
-('Task 2', 'Fix login bug', '2024-12-28 15:00:00', 'Medium', 'Doing'),
-('Task 3', 'Develop new feature for dashboard', '2025-01-05 09:00:00', 'High', 'To Do'),
-('Task 4', 'Update server configuration', '2024-12-26 18:00:00', 'Low', 'Review'),
-('Task 5', 'Test e-commerce payment system', '2024-12-31 23:59:00', 'Medium', 'Done');
+
+INSERT INTO tasks (title, description, due_datetime, priority, status, tag) VALUES
+('Fix Bug', 'Resolve the login issue on the website', '2024-12-30 10:00:00', 'High', 'To Do', 'Bug'),
+('Design Logo', 'Create a new logo for the client', '2024-12-28 15:00:00', 'Medium', 'Doing', 'Feature'),
+('Write Report', 'Complete the annual report', '2024-12-31 12:00:00', 'High', 'Review', 'Bug'),
+('Code Review', 'Review the code for the new feature', '2024-12-27 18:00:00', 'Low', 'Done', 'Feature'),
+('Team Meeting', 'Discuss project progress with the team', '2024-12-29 09:00:00', 'Medium', 'To Do', 'Feature'),
+('Test Feature', 'Test the search functionality on the app', '2024-12-26 20:00:00', 'High', 'Doing');
+
 
 INSERT INTO task_users (task_id, user_id)
 VALUES
