@@ -16,7 +16,7 @@ class MainController
         return $tasks;
     }
     public function CreateTask(){
-        $this->taskModel->CreateTask();
+        $this->taskModel->CreateTask($data=[]);
     }
 
 }
