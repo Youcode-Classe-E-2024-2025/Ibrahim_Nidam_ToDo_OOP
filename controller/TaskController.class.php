@@ -17,6 +17,7 @@ class TaskController extends MainController{
             $description = $_POST["description"];
             $due_date = $_POST["due_date"];
             $status = $_POST["status"];
+            $tag = $_POST["tag"];
     
             $data = [
                 'title' => $title,
@@ -24,6 +25,10 @@ class TaskController extends MainController{
                 'due_datetime' => $due_date,
                 'status' => $status,
             ];
+    
+            if (!empty($tag)) {
+                $data['tag'] = $tag;
+            }
     
             $taskId = $this->taskModel->create('tasks', $data);
             

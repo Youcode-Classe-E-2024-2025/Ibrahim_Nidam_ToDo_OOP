@@ -76,7 +76,7 @@
             <label for="priority-low" class="text-green-500">Low</label>
         </div>
     </div>
-            <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4">
             <label class="w-24 text-gray-700 font-semibold">Status:</label>
             <select
                 name="status"
@@ -91,8 +91,21 @@
             </select>
         </div>
 
+        <div class="flex items-center space-x-4">
+            <label class="w-24 text-gray-700 font-semibold">Tags:</label>
+            <select
+                name="tag"
+                id="tag"
+                class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                <option value="" >Select a tag</option>
+                <option value="Bug">Bug</option>
+                <option value="Feature">Feature</option>
+            </select>
+        </div>
+
         <label for="users" class="w-24 text-gray-700 font-semibold mt-4">Users:</label>
-        <select name="users[]" id="users" multiple class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 chosen-select">
+        <select name="users[]" id="users" multiple required class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 chosen-select">
         <?php if (!empty($users)): ?>
             <?php foreach ($users as $user): ?>
         <option value="<?= $user["id"] ?>"><?= $user["name"] ?></option>
