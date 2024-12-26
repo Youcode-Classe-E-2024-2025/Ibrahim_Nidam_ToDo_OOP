@@ -24,5 +24,8 @@ class MainController{
     public function CreateTask(){
         $this->taskModel->CreateTask($data=[]);
     }
+    public function CreateUser(){
+        $this->UserModel->CreateUser($data=[]);
+    }
 
 }

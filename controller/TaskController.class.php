@@ -17,18 +17,19 @@ class TaskController extends MainController{
             $description = $_POST["description"];
             $due_date = $_POST["due_date"];
             $status = $_POST["status"];
+    
             $data = [
                 'title' => $title,
                 'description' => $description,
                 'due_datetime' => $due_date,
-                'status' => $status
+                'status' => $status,
             ];
-            $this->taskModel->CreateTask($data);
-            header('Location: index.php');
-            exit;
+    
+            $taskId = $this->taskModel->create('tasks', $data);
+            
+            return $taskId;
         }
     }
-    
 
 }
 

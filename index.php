@@ -14,8 +14,9 @@ switch ($action) {
         $UserController->index();
         break;
     case "create":
-        $taskController->processCreateTask();
-        break;
+       $id = $taskController->processCreateTask();
+       $UserController->processCreateTaskUsers($id);
+    break;
     
 }
 ?>
