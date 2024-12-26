@@ -91,6 +91,19 @@
             </select>
         </div>
 
+        <label for="users" class="w-24 text-gray-700 font-semibold mt-4">Users:</label>
+        <select name="users[]" id="users" multiple class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 chosen-select">
+        <?php if (!empty($users)): ?>
+            <?php foreach ($users as $user): ?>
+        <option value="<?= $user["id"] ?>"><?= $user["name"] ?></option>
+        <?php endforeach; ?>
+        <?php else: ?>
+            <option value=""><?= "No users" ?></option>
+        <?php endif; ?>
+
+        </select>
+    </div>
+
     <div class="flex justify-end mt-6">
 
         <button

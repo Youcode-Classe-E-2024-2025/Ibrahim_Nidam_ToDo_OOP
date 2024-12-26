@@ -2,17 +2,14 @@
 
 require_once 'MainController.class.php';
 
-class TaskController extends MainController
-{
+class TaskController extends MainController{
     public function index()
     {
         $tasks = $this->displayTasks();
         $completionPercentage = $this->taskModel->getCompletionPercentage();
         require_once 'view/kanban.php';
     }
-    public function showCreateForm() {
-        include 'view/task_form.php';
-    }
+
     
     public function processCreateTask() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

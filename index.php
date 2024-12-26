@@ -1,5 +1,6 @@
 <?php
 require 'controller/TaskController.class.php';
+require 'controller/UserController.class.php';
 
 $action = $_GET["action"] ?? "list";
 
@@ -10,11 +11,10 @@ switch ($action) {
     case "list":  $taskController->index();;
     break;
     case "create_form":
-        $taskController->showCreateForm();
+        $UserController->index();
         break;
     case "create":
         $taskController->processCreateTask();
-        $$UserController->index();
         break;
     
 }

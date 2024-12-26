@@ -1,5 +1,5 @@
 <?php 
-require "MainModel.class.php";
+require_once 'MainModel.class.php';
 
 class TaskModel extends MainModel{
 

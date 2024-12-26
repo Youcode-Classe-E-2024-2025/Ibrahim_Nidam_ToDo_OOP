@@ -20,6 +20,10 @@
         />
 
         <link href="assets/src/css/tailwind/output.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+        <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+
     </head>
     <body class="m-0 p-0 flex h-screen">
         <main class="flex-1 overflow-x-hidden">

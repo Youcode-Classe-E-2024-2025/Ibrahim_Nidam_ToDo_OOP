@@ -4,13 +4,13 @@ require_once 'config.php';
 require_once 'model/TaskModel.class.php';
 require_once 'model/UserModel.class.php';
 
-class MainController
-{
+class MainController{
     protected $taskModel;
     protected $UserModel;
 
     public function __construct(){
         $this->taskModel = new TaskModel();
+        $this->UserModel = new UserModel();
     }
 
     public function displayTasks(){
