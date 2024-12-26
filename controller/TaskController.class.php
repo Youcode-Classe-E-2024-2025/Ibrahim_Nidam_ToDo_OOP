@@ -3,6 +3,11 @@
 require_once 'MainController.class.php';
 
 class TaskController extends MainController{
+
+    public function login() {
+        require_once 'view/sections/login.php';
+    }
+
     public function index()
     {
         $tasks = $this->displayTasks();
