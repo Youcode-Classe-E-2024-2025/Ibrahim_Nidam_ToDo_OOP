@@ -16,6 +16,11 @@ class TaskModel extends MainModel{
     $this->create($this->table,$data);
   }
 
+   public function deleteTask($id){
+   $this->delete($this->table, ['id' => $id]);
+   }
+
+
   public function getCompletionPercentage(){
         $tasks = $this->getAllTasks();
         $totalTasks = count($tasks);

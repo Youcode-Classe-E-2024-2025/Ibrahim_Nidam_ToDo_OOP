@@ -9,8 +9,7 @@ class MainModel{
         $database = new Database();
         $this->db = $database->getConnection();
     }
-
-    
+        
     public function read($table, $conditions = []){
         $sql = "SELECT * FROM {$table}";
         if (!empty($conditions)) {
@@ -52,5 +51,16 @@ class MainModel{
         
     }
     
+    public function delete($table, $conditions)
+    {
+        $where = [];
+        foreach ($conditions as $key => $value) {
+            $where[] = "{$key} = :{$key}";
+        }
+
+        $sql = "DELETE FROM {$table} WHERE " . implode(' AND ', $where);
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($conditions);
+    }
 
 }

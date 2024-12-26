@@ -31,6 +31,11 @@ class TaskController extends MainController{
         }
     }
 
+    public function deleteTask($id){
+        $this->taskModel->deleteTask($id);
+        header('Location: ?action=list');
+    }
+
 }
 
 

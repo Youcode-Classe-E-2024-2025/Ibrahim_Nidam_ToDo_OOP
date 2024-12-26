@@ -17,6 +17,8 @@ switch ($action) {
        $id = $taskController->processCreateTask();
        $UserController->processCreateTaskUsers($id);
     break;
-    
+    case "delete":
+        $taskController->deleteTask($_GET['id']);
+    break;
 }
 ?>

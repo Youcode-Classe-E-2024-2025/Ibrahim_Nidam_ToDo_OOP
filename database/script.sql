@@ -2,7 +2,6 @@ CREATE DATABASE IF NOT EXISTS taskflow_db;
 
 USE taskflow_db;
 
--- Users table
 CREATE TABLE IF NOT EXISTS users (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -10,7 +9,6 @@ CREATE TABLE IF NOT EXISTS users (
   password VARCHAR(255) NOT NULL
 );
 
--- Tasks table
 CREATE TABLE IF NOT EXISTS tasks (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(16) NOT NULL,
@@ -22,7 +20,6 @@ CREATE TABLE IF NOT EXISTS tasks (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Task-Users mapping table for many-to-many relationship
 CREATE TABLE IF NOT EXISTS task_users (
   task_id INT,
   user_id INT,
@@ -31,7 +28,6 @@ CREATE TABLE IF NOT EXISTS task_users (
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 
--- Insert sample data into users table
 INSERT INTO users (name, email, password) VALUES
 ('Alice Johnson', 'alice.johnson@example.com', 'password123'),
 ('Bob Smith', 'bob.smith@example.com', 'securePass!'),
@@ -39,7 +35,6 @@ INSERT INTO users (name, email, password) VALUES
 ('Diana Prince', 'diana.prince@example.com', 'wonderwoman1'),
 ('Ethan Hunt', 'ethan.hunt@example.com', 'missionImpossible');
 
--- Insert sample data into tasks table
 INSERT INTO tasks (title, description, due_datetime, priority, status)
 VALUES 
 ('Task 1', 'Complete project documentation', '2024-12-30 12:00:00', 'High', 'To Do'),
@@ -48,7 +43,6 @@ VALUES
 ('Task 4', 'Update server configuration', '2024-12-26 18:00:00', 'Low', 'Review'),
 ('Task 5', 'Test e-commerce payment system', '2024-12-31 23:59:00', 'Medium', 'Done');
 
--- Insert sample data into task_users table
 INSERT INTO task_users (task_id, user_id)
 VALUES
 (1, 1), -- Task 1 assigned to User 1

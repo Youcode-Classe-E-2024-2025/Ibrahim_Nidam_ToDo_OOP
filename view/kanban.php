@@ -36,7 +36,9 @@
 
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
-              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              <a href="?action=delete&id=<?= $doing['id'] ?>">
+                <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              </a>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
@@ -104,7 +106,9 @@
 
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
-              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              <a href="?action=delete&id=<?= $doing['id'] ?>">
+                <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              </a>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
@@ -169,7 +173,9 @@
 
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
-              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              <a href="?action=delete&id=<?= $doing['id'] ?>">
+                <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              </a>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
@@ -234,7 +240,9 @@
 
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
-              <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              <a href="?action=delete&id=<?= $doing['id'] ?>">
+                <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
+              </a>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>

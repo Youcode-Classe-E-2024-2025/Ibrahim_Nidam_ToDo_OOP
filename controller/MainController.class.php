@@ -28,4 +28,8 @@ class MainController{
         $this->UserModel->CreateUser($data=[]);
     }
 
+    public function deleteTask($id){
+        $this->taskModel->deleteTask($id);
+    }
+
 }
