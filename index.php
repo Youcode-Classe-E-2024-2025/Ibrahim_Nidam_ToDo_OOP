@@ -8,7 +8,6 @@ $action = $_GET["action"] ?? "list";
 $taskController = new TaskController();
 $UserController = new UserController();
 
-// Check if user is logged in for protected routes
 if (!in_array($action, ['login', 'signUp']) && !isset($_SESSION['user'])) {
     header('Location: index.php?action=login');
     exit;

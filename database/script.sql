@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS task_users (
 
 INSERT INTO users (name, email, password, role) 
 VALUES ('John Doe', 'u@g.com', '$2a$12$6b3cRmfIq0/5TeffMU4Co.2mYBCqn7HKGq9XDYykqYMIEJBjuEmVO', 'user'),
-      ('Admin Jane', 'a@g.com', '$2a$12$OMkg7SorBrt9MDazDoWrNu3GMm3Xwi8.CB64x1VhKc7LUf9.P.f62', 'admin'),
+      ('El Jassimi', 'a@g.com', '$2a$12$OMkg7SorBrt9MDazDoWrNu3GMm3Xwi8.CB64x1VhKc7LUf9.P.f62', 'admin'),
       ('Alice Johnson', 'a.j@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
       ('Bob Smith', 'b.s@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
       ('Charlie Brown', 'c.b@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
