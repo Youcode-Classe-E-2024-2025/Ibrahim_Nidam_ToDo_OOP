@@ -28,11 +28,13 @@ if (!isset($_SESSION['user'])) {
           class="more-vert text-black cursor-pointer h-6 w-6"
         />
       </div>
+      <?php if ($_SESSION['user_role'] === 'admin'): ?>
       <a
         href="?action=create_form"
         data-status-id="todo"
-        class=" text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"
+        class="text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"
       >+ Add Task</a>
+      <?php endif; ?>
     </div>
     
     <article id="todo-card-article" class="flex flex-col gap-3 flex-1 w-full">
@@ -47,9 +49,11 @@ if (!isset($_SESSION['user'])) {
           <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <?php if ($_SESSION['user_role'] === 'admin'): ?>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
                 <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
               </a>
+              <?php endif; ?>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
@@ -79,7 +83,7 @@ if (!isset($_SESSION['user'])) {
             <?php endforeach; ?>
             <?php else: ?>
               <div class="place-holder p-6 bg-white rounded-lg shadow-md border border-gray-200 w-full">
-               No Task Yet
+                No Task Yet
               </div>
             <?php endif; ?>
     </article>
@@ -102,11 +106,13 @@ if (!isset($_SESSION['user'])) {
           class="more-vert text-black cursor-pointer h-6 w-6"
         />
       </div>
+      <?php if ($_SESSION['user_role'] === 'admin'): ?>
       <a
         href="?action=create_form"
         data-status-id="doing"
-        class=" text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"
+        class="text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"
       >+ Add Task</a>
+      <?php endif; ?>
     </div>
     
     <article id="doing-card-article" class="flex flex-col gap-3 flex-1 w-full">
@@ -121,9 +127,11 @@ if (!isset($_SESSION['user'])) {
           <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <?php if ($_SESSION['user_role'] === 'admin'): ?>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
                 <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
               </a>
+              <?php endif; ?>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
@@ -176,8 +184,9 @@ if (!isset($_SESSION['user'])) {
           class="more-vert text-black cursor-pointer h-6 w-6"
         />
       </div>
+      <?php if ($_SESSION['user_role'] === 'admin'): ?>
       <a href="?action=create_form" data-status-id="review" class="text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors">+ Add Task</a>
-
+      <?php endif; ?>
     </div>
     
     <article id="review-card-article" class="flex flex-col gap-3 flex-1 w-full">
@@ -192,9 +201,11 @@ if (!isset($_SESSION['user'])) {
           <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <?php if ($_SESSION['user_role'] === 'admin'): ?>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
                 <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
               </a>
+              <?php endif; ?>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>
@@ -247,8 +258,9 @@ if (!isset($_SESSION['user'])) {
           class="more-vert text-black cursor-pointer h-6 w-6"
         />
       </div>
-      <a href="?action=create_form" data-status-id="done" class=" text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"> + Add Task</a>
-
+      <?php if ($_SESSION['user_role'] === 'admin'): ?>
+      <a href="?action=create_form" data-status-id="done" class="text-white bg-lightModeMain p-2 rounded text-center hover:bg-opacity-90 transition-colors"> + Add Task</a>
+      <?php endif; ?>
     </div>
     
     <article id="done-card-article" class="flex flex-col gap-3 flex-1 w-full">
@@ -263,9 +275,11 @@ if (!isset($_SESSION['user'])) {
           <?php endif; ?>
             <div class="flex justify-between items-start mb-2">
               <span class="${priority_Class_color} text-sm font-semibold px-2 py-1 rounded-md"><?= $doing["title"] ?></span>
+              <?php if ($_SESSION['user_role'] === 'admin'): ?>
               <a href="?action=delete&id=<?= $doing['id'] ?>">
                 <img src="assets/src/images/icons/trash.svg" alt="" class="trash-icon text-black cursor-pointer">
               </a>
+              <?php endif; ?>
             </div>
             <p class="text-greyText text-xs mb-2"><?= date('Y-m-d', strtotime($doing['created_at'])) . " > " . date('Y-m-d', strtotime($doing['due_datetime'])) ?></p>
             <p class="text-sm text-ellipsis overflow-hidden text-gray-700 mb-4"><?= $doing['description']?></p>

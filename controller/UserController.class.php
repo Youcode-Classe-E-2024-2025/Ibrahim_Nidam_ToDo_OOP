@@ -48,7 +48,6 @@ class UserController extends MainController{
 
     public function login()
     {
-        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -59,6 +58,8 @@ class UserController extends MainController{
             if ($user && password_verify($password, $user[0]['password'])) {
                 session_start();
                 $_SESSION['user'] = $user[0]['id'];
+                $_SESSION['user_role'] = $user[0]['role'];
+                $_SESSION['user_name'] = $user[0]['name'];
                 header('Location: index.php?action=list');
                 exit;
             } else {

@@ -32,16 +32,14 @@ CREATE TABLE IF NOT EXISTS task_users (
 );
 
 INSERT INTO users (name, email, password, role) 
-VALUES ('John Doe', 'u@g.com', ' $2a$12$6b3cRmfIq0/5TeffMU4Co.2mYBCqn7HKGq9XDYykqYMIEJBjuEmVO', 'user'),
-      ('Admin Jane', 'a@g.com', ' $2a$12$wTosY8YUm4.C4oXOU3EU.evWgjq3SOBVmtsrTULDG0iLrKAaRbYpi', 'admin');
+VALUES ('John Doe', 'u@g.com', '$2a$12$6b3cRmfIq0/5TeffMU4Co.2mYBCqn7HKGq9XDYykqYMIEJBjuEmVO', 'user'),
+      ('Admin Jane', 'a@g.com', '$2a$12$OMkg7SorBrt9MDazDoWrNu3GMm3Xwi8.CB64x1VhKc7LUf9.P.f62', 'admin'),
+      ('Alice Johnson', 'a.j@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
+      ('Bob Smith', 'b.s@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
+      ('Charlie Brown', 'c.b@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
+      ('Diana Prince', 'd.p@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user'),
+      ('Ethan Hunt', 'e.h@g.com', '$2a$12$CxFphwit5JYmkwvK3tXbCed/6iBuVt5MoG99tk8yt7PRrPU3HOaG2', 'user');
 
-
-INSERT INTO users (name, email, password) VALUES
-('Alice Johnson', 'alice.johnson@example.com', 'password123'),
-('Bob Smith', 'bob.smith@example.com', 'securePass!'),
-('Charlie Brown', 'charlie.brown@example.com', 'charlie2024'),
-('Diana Prince', 'diana.prince@example.com', 'wonderwoman1'),
-('Ethan Hunt', 'ethan.hunt@example.com', 'missionImpossible');
 
 
 INSERT INTO tasks (title, description, due_datetime, priority, status, tag) VALUES
@@ -50,16 +48,16 @@ INSERT INTO tasks (title, description, due_datetime, priority, status, tag) VALU
 ('Write Report', 'Complete the annual report', '2024-12-31 12:00:00', 'High', 'Review', 'Bug'),
 ('Code Review', 'Review the code for the new feature', '2024-12-27 18:00:00', 'Low', 'Done', 'Feature'),
 ('Team Meeting', 'Discuss project progress with the team', '2024-12-29 09:00:00', 'Medium', 'To Do', 'Feature'),
-('Test Feature', 'Test the search functionality on the app', '2024-12-26 20:00:00', 'High', 'Doing');
+('Test Feature', 'Test the search functionality on the app', '2024-12-26 20:00:00', 'High', 'Doing','');
 
 
 INSERT INTO task_users (task_id, user_id)
 VALUES
-(1, 1), -- Task 1 assigned to User 1
-(2, 2), -- Task 2 assigned to User 2
-(3, 3), -- Task 3 assigned to User 3
-(4, 4), -- Task 4 assigned to User 4
-(5, 5), -- Task 5 assigned to User 5
-(1, 2), -- Task 1 also assigned to User 2
-(2, 3), -- Task 2 also assigned to User 3
-(3, 4); -- Task 3 also assigned to User 4
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(1, 2),
+(2, 3),
+(3, 4);
