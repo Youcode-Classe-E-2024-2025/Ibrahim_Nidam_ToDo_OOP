@@ -61,6 +61,19 @@ class TaskController extends MainController{
         header('Location: ?action=list');
     }
 
+    public function updateStatus() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $taskId = $_POST['taskId'] ?? null;
+            $newStatus = $_POST['status'] ?? null;
+            
+            if ($taskId && $newStatus) {
+                $result = $this->taskModel->updateTaskStatus($taskId, $newStatus);
+                header('Content-Type: application/json');
+                echo json_encode(['success' => $result]);
+                exit;
+            }
+        }
+        exit;
+    }
+
 }
-
-

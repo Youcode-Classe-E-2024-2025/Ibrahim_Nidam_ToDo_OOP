@@ -31,4 +31,11 @@ class TaskModel extends MainModel {
         $completedTasks = count(array_filter($tasks, fn($task) => $task['status'] === 'Done'));
         return $totalTasks > 0 ? round(($completedTasks / $totalTasks) * 100) : 0;
     }
+
+    public function updateTaskStatus($taskId, $newStatus) {
+        return $this->update($this->table, 
+            ['status' => $newStatus], 
+            ['id' => $taskId]
+        );
+    }
 }

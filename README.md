@@ -10,7 +10,6 @@
 
 - **GitHub Repository :** [View on GitHub](https://github.com/Youcode-Classe-E-2024-2025/eljassimi_abdelmouhaimine_todo_oop.git)
 - **UML Link :** [View UML]()
-- **ERD Link :** [View ERD]()
 
 ### créé : 24/12/24
 

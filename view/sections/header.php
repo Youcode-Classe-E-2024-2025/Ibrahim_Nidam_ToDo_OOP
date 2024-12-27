@@ -25,6 +25,38 @@
         <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
+        <style>
+        .drag-over {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+            border: 2px dashed #ccc !important;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .dragging {
+            opacity: 0.6;
+            transform: scale(1.02);
+            cursor: grabbing !important;
+        }
+
+        .dragNdrop {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .dragging-active .dragNdrop:not(.dragging) {
+            transform: scale(0.98);
+        }
+
+        #todo-card-article,
+        #doing-card-article,
+        #review-card-article,
+        #done-card-article {
+            min-height: 200px;
+            transition: background-color 0.3s ease, border 0.3s ease;
+            padding: 8px;
+            border: 2px solid transparent;
+        }
+
+    </style>
 
     </head>
     <body class="m-0 p-0 flex h-screen">

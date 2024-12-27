@@ -63,4 +63,29 @@ class MainModel{
         $stmt->execute($conditions);
     }
 
+    public function update($table, $data, $conditions) {
+        $set = [];
+        foreach ($data as $key => $value) {
+            $set[] = "{$key} = :{$key}";
+        }
+        
+        $where = [];
+        foreach ($conditions as $key => $value) {
+            $where[] = "{$key} = :where_{$key}";
+        }
+
+        $sql = "UPDATE {$table} SET " . implode(', ', $set) . " WHERE " . implode(' AND ', $where);
+        
+        $params = [];
+        foreach ($data as $key => $value) {
+            $params[$key] = $value;
+        }
+        foreach ($conditions as $key => $value) {
+            $params["where_" . $key] = $value;
+        }
+        
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute($params);
+    }
+
 }

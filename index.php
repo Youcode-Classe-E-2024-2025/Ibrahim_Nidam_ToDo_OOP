@@ -16,20 +16,20 @@ if (!in_array($action, ['login', 'signUp']) && !isset($_SESSION['user'])) {
 switch ($action) {
     case "login":
         $UserController->login();
-        break;
+    break;
     case "signUp":
         $UserController->signUp();
-        break;
+    break;
     case "list":
         $taskController->index();
-        break;
+    break;
     case "create_form":
         if ($_SESSION['user_role'] === 'admin') {
             $UserController->index();
         } else {
             header('Location: index.php?action=list');
         }
-        break;
+    break;
     case "create":
         if ($_SESSION['user_role'] === 'admin') {
             $id = $taskController->processCreateTask();
@@ -37,16 +37,19 @@ switch ($action) {
         } else {
             header('Location: index.php?action=list');
         }
-        break;
+    break;
     case "delete":
         if ($_SESSION['user_role'] === 'admin') {
             $taskController->deleteTask($_GET['id']);
         } else {
             header('Location: index.php?action=list');
         }
-        break;
+    break;
     case "logout":
         $UserController->logout();
-        break;
+    break;
+    case 'updateStatus':
+        $taskController->updateStatus();
+    break;
 }
 ?>
