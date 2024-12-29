@@ -1,14 +1,14 @@
-# eljassimi_abdelmouhaimine_todo_oop
+# Ibrahim_Nidam_ToDo_OOP
 
 **TaskFlow - Application web simple de gestion de tâches**
 
 **Author du Brief:** Iliass RAIHANI.
 
-**Author:** eljassimi abdelmouhaimine.
+**Author:** Ibrahim Nidam.
 
 ## Links
 
-- **GitHub Repository :** [View on GitHub](https://github.com/Youcode-Classe-E-2024-2025/eljassimi_abdelmouhaimine_todo_oop.git)
+- **GitHub Repository :** [View on GitHub](https://github.com/Youcode-Classe-E-2024-2025/Ibrahim_Nidam_ToDo_OOP.git)
 - **UML Link :** [View UML](https://lucid.app/lucidchart/48ba8c63-7fa2-4501-a7ba-750a67a41b1d/edit?viewport_loc=-2485%2C-550%2C3840%2C1692%2C0_0&invitationId=inv_04f160c4-8229-4a94-9574-5f8ea0de382f)
 
 ### créé : 24/12/24
@@ -26,11 +26,11 @@ TaskFlow est un projet d'initiation à la Programmation Orientée Objet (POO) à
 
 1. **Cloner le projet** :
    - Ouvrir un terminal et exécuter :  
-     `git clone https://github.com/Youcode-Classe-E-2024-2025/eljassimi_abdelmouhaimine_todo_oop.git`
+     `git clone https://github.com/Youcode-Classe-E-2024-2025/Ibrahim_Nidam_ToDo_OOP.git`
 
 2. **Placer le projet dans le dossier Laragon** :
    - Cliquez sur le bouton **Root** dans Laragon pour ouvrir le dossier `www` (par défaut, `C:\laragon\www`).
-   - Le chemin de votre projet devrait être `C:\laragon\www\eljassimi_abdelmouhaimine_todo_oop`.
+   - Le chemin de votre projet devrait être `C:\laragon\www\Ibrahim_Nidam_ToDo_OOP`.
 
 3. **Configurer la base de données** :
    - Faites un click droit sur **Laragon**, puis allez dans **Tools** > **Quick Add** et téléchargez **phpMyAdmin** et **MySQL**.
@@ -48,7 +48,7 @@ TaskFlow est un projet d'initiation à la Programmation Orientée Objet (POO) à
 
 
 6. **Exécuter le projet** :
-   - Une fois les services lancés dans Laragon, cliquez sur le bouton **Web** pour accéder à `http://localhost/eljassimi_abdelmouhaimine_todo_oop` dans votre navigateur.
+   - Une fois les services lancés dans Laragon, cliquez sur le bouton **Web** pour accéder à `http://localhost/Ibrahim_Nidam_ToDo_OOP` dans votre navigateur.
 
 
 
